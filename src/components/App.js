@@ -1,5 +1,4 @@
-import './App.css';
-import NikeNavbar from './components/navbar';
+import NikeNavbar from './Layout/Header/navbar';
 
 function App() {
   return (

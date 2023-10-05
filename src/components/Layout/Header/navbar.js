@@ -22,33 +22,44 @@ function NikeNavbar() {
   return (
     <>
       <AppBar sx={{ backgroundColor: "white", color: "black" }}>
-        <Box sx={{ backgroundColor: "#F5F5F5", display: "flex", justifyContent: 'flex-end'}}>
-          <IconButton sx={{ fontSize: 12}}>
-          <p>
-            Find a Store
-          </p>
+        <Box
+          sx={{
+            backgroundColor: "#F5F5F5",
+            display: "flex",
+            justifyContent: "flex-end",
+          }}
+        >
+          <IconButton>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/3/37/Jumpman_logo.svg"
+              width={50}
+              height={25}
+              alt="jordan"
+            />
           </IconButton>
-            <IconButton sx={{ fontSize: 12}}>
-          <p>
-
-            Help
-          </p>
-            </IconButton>
-            <IconButton sx={{ fontSize: 12}}>
-          <p>
-
-            Join Us
-          </p>
-            </IconButton>
-            <IconButton sx={{ fontSize: 12}}>
-          <p>
-
-            Sign In
-          </p>
-            </IconButton>
+          <IconButton>
+            <img
+              src="https://1000logos.net/wp-content/uploads/2021/04/Converse-logo.png"
+              width={50}
+              height={25}
+              alt="converse"
+            />
+          </IconButton>
+          <IconButton sx={{ fontSize: 12 }}>
+            <p>Find a Store</p>
+          </IconButton>
+          <IconButton sx={{ fontSize: 12 }}>
+            <p>Help</p>
+          </IconButton>
+          <IconButton sx={{ fontSize: 12 }}>
+            <p>Join Us</p>
+          </IconButton>
+          <IconButton sx={{ fontSize: 12 }}>
+            <p>Sign In</p>
+          </IconButton>
         </Box>
         <Container>
-          <Toolbar>
+          <Toolbar sx={{ display: "flex", justifyContent: "center" }}>
             {/* <IconButton
             edge="start"
             color="inherit"

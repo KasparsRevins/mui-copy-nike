@@ -6,7 +6,54 @@ import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
-import { Box, Button, Container, Hidden } from "@mui/material";
+import Carousel from "react-material-ui-carousel";
+import { Box, Button, Paper, Hidden } from "@mui/material";
+
+{
+  /* CAROUSEL --------------------------------------------*/
+}
+
+function FuncCarousel(props) {
+  var items = [
+    {
+      name: "15% OFF SELECTED BRAS AND LEGGINGS",
+      description:
+        "Pair bras and leggings. Use code MIX23 on selected styles*. Valid til 12 October 9am CEST Shop *Promo Terms",
+    },
+    {
+      name: "Winter Wear",
+      description: "Get Ready for Cold and Rainy Weather Shop",
+    },
+    {
+      name: "Shop All New Arrivals",
+      description: "Shop",
+    },
+    {
+      name: "Free Delivery & Returns",
+      description:
+        "Nike Members get free delivery and free 30-day returns. Learn More Join Us",
+    },
+  ];
+
+  return (
+    <Carousel navButtonsAlwaysInvisible={true}>
+      {items.map((item, i) => (
+        <Item key={i} item={item} />
+      ))}
+    </Carousel>
+  );
+}
+
+// AppBar --------------------------------------------
+
+function Item(props) {
+  return (
+    <Paper sx={{ backgroundColor: "#F5F5F5", boxShadow: 0 }}>
+      <p>{props.item.name}</p>
+      <p>{props.item.description}</p>
+    </Paper>
+  );
+}
 
 function NikeNavbar() {
   const [menuAnchorEl, setMenuAnchorEl] = useState(null);
@@ -62,6 +109,7 @@ function NikeNavbar() {
             </IconButton>
           </div>
         </Box>
+        {/* SECOND APPBAR --------------------------------------------*/}
         <Box>
           <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
             {/* <IconButton
@@ -114,6 +162,9 @@ function NikeNavbar() {
               <MenuItem>Log In</MenuItem>
             </Menu>
           </Hidden>
+        </Box>
+        <Box sx={{ backgroundColor: "#F5F5F5" }}>
+          <FuncCarousel />
         </Box>
       </AppBar>
     </>

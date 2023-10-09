@@ -38,7 +38,7 @@ function FuncCarousel(props) {
   return (
     <Carousel navButtonsAlwaysInvisible={true}>
       {items.map((item, i) => (
-        <Item key={i} item={item} />
+        <Item key={i} item={item}/>
       ))}
     </Carousel>
   );
@@ -58,17 +58,13 @@ function Item(props) {
 function NikeNavbar() {
   const [menuAnchorEl, setMenuAnchorEl] = useState(null);
 
-  const handleMenuOpen = (event) => {
-    setMenuAnchorEl(event.currentTarget);
-  };
-
   const handleMenuClose = () => {
     setMenuAnchorEl(null);
   };
 
   return (
     <>
-      <AppBar sx={{ backgroundColor: "white", color: "black" }}>
+      <AppBar sx={{ backgroundColor: "white", color: "black", boxShadow: "none" }}>
         <Box
           sx={{
             backgroundColor: "#F5F5F5",
@@ -126,6 +122,7 @@ function NikeNavbar() {
                   src="https://cdn.iconscout.com/icon/free/png-512/free-nike-15-761696.png?f=webp&w=256"
                   width={50}
                   height={50}
+                  alt="nike"
                 />
               </IconButton>
             </div>
@@ -166,6 +163,15 @@ function NikeNavbar() {
         <Box sx={{ backgroundColor: "#F5F5F5" }}>
           <FuncCarousel />
         </Box>
+        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <p style={{ marginBottom: 0 }}>Keep Running</p>
+          <h1 style={{fontWeight: 500, textTransform: "uppercase", marginTop: "1px", fontSize: "72px"}}>It's still better outside.</h1>
+        </Box>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <button style={{ background: "black", color: "white", borderRadius: "25px", padding: "10px 20px 10px 20px", cursor: "pointer" }}>
+            Shop
+          </button>
+        </div>
       </AppBar>
     </>
   );

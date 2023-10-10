@@ -8,10 +8,14 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 import Carousel from "react-material-ui-carousel";
 import { Box, Button, Paper, Hidden } from "@mui/material";
+import ReactPlayer from 'react-player'
 
-{
-  /* CAROUSEL --------------------------------------------*/
-}
+// Video --------------------------------------------
+
+
+
+
+// CAROUSEL --------------------------------------------
 
 function FuncCarousel(props) {
   var items = [
@@ -172,6 +176,9 @@ function NikeNavbar() {
             Shop
           </button>
         </div>
+        <Box>
+        <ReactPlayer url='https://youtu.be/79hzoeRhP74?si=oeBYo8CqfmtNApxj' muted="true" playing="true" loop="true" width="100%" height="1080px" controls="false" />
+        </Box>
       </AppBar>
     </>
   );

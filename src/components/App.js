@@ -2,6 +2,7 @@ import BackgroundVideo from './Layout/Body/backgroundvideo';
 import KeepRunning from './Layout/Header/keeprunning';
 import NikeNavbar from './Layout/Header/navbar';
 import CarouselAds from './Layout/Header/carousel';
+import Footer from './Layout/Footer/footer';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <CarouselAds/>
       <KeepRunning/>
       <BackgroundVideo/>
+      <Footer/>
     </>
   );
 }

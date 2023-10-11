@@ -7,7 +7,7 @@ function FuncCarousel(props) {
     {
       name: "15% OFF SELECTED BRAS AND LEGGINGS",
       description:
-        "Pair bras and leggings. Use code MIX23 on selected styles*. Valid til 12 October 9am CEST Shop *Promo Terms",
+        "Pair bras and leggings. Use code MIX23 on selected styles*. Valid til 12 October 9am CEST",
     },
     {
       name: "Winter Wear",
@@ -25,7 +25,11 @@ function FuncCarousel(props) {
   ];
 
   return (
-    <Carousel navButtonsAlwaysInvisible={true}>
+    <Carousel
+      navButtonsAlwaysInvisible={true}
+      indicators={false}
+      sx={{ marginRight: "25%", marginLeft: "25%", width: "700px", height: "100%", cursor: "pointer" }}
+    >
       {items.map((item, i) => (
         <Item key={i} item={item} />
       ))}
@@ -35,16 +39,32 @@ function FuncCarousel(props) {
 
 function Item(props) {
   return (
-    <Paper sx={{ backgroundColor: "#F5F5F5", boxShadow: 0 }}>
+    <Paper
+      sx={{
+        backgroundColor: "#F5F5F5",
+        boxShadow: 0,
+        padding: "1px",
+        position: "relative",
+        textAlign: "center"
+      }}
+    >
       <p>{props.item.name}</p>
-      <p>{props.item.description}</p>
+      <p style={{ fontSize: "12px" }}>{props.item.description}</p>
     </Paper>
   );
 }
 
 function CarouselAds() {
   return (
-    <Box sx={{ backgroundColor: "#F5F5F5", marginTop: "6%" }}>
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        backgroundColor: "#F5F5F5",
+        marginTop: "120px",
+        // height: "58px"
+      }}
+    >
       <FuncCarousel />
     </Box>
   );

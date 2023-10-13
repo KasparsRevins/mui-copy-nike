@@ -5,6 +5,7 @@ import CarouselAds from './Layout/Header/carousel';
 import Footer from './Layout/Footer/footer';
 import MyCarousel from './Layout/Body/imagecarousel';
 import Explore from './Layout/Body/explore';
+import SportCarousel from './Layout/Body/sportcarousel';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <BackgroundVideo/>
       <MyCarousel/>
       <Explore/>
+      <SportCarousel/>
       <Footer/>
     </>
   );

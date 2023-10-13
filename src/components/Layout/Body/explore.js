@@ -3,9 +3,9 @@ import React from "react";
 
 function Explore() {
   return (
-    <div style={{ alignItems: "center" }}>
+    <div>
       <div>
-        <h1>More to Explore</h1>
+        <h3 style={{ marginLeft: "1em", marginRight: "1em" }}>More to Explore</h3>
       </div>
       <div>
         <Box

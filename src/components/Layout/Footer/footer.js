@@ -2,6 +2,12 @@ import { Box } from "@mui/material";
 import React from "react";
 
 const Footer = () => {
+
+  const linkStyle = {
+    textDecoration: "none", 
+    color: "#7e7e7e",
+  };
+
   return (
     <footer>
       <Box
@@ -16,52 +22,52 @@ const Footer = () => {
       >
         <div>
           <h3>Explore Nike</h3>
-          <ul>
+          <ul style={{ listStyleType: "none", }}>
             <li>
-              <a href="#">About Us</a>
+              <a href="#" style={linkStyle}>About Us</a>
             </li>
             <li>
-              <a href="#">News</a>
+              <a href="#" style={linkStyle}>News</a>
             </li>
             <li>
-              <a href="#">Careers</a>
+              <a href="#" style={linkStyle}>Careers</a>
             </li>
             <li>
-              <a href="#">Investors</a>
+              <a href="#" style={linkStyle}>Investors</a>
             </li>
           </ul>
         </div>
         <div>
           <h3>Customer Service</h3>
-          <ul>
+          <ul style={{ listStyleType: "none", }}>
             <li>
-              <a href="#">Contact Us</a>
+              <a href="#" style={linkStyle}>Contact Us</a>
             </li>
             <li>
-              <a href="#">Order Status</a>
+              <a href="#" style={linkStyle}>Order Status</a>
             </li>
             <li>
-              <a href="#">Shipping</a>
+              <a href="#" style={linkStyle}>Shipping</a>
             </li>
             <li>
-              <a href="#">Returns</a>
+              <a href="#" style={linkStyle}>Returns</a>
             </li>
           </ul>
         </div>
         <div>
           <h3>Connect with Nike</h3>
-          <ul>
+          <ul style={{ listStyleType: "none", }}>
             <li>
-              <a href="#">Instagram</a>
+              <a href="#" style={linkStyle}>Instagram</a>
             </li>
             <li>
-              <a href="#">Facebook</a>
+              <a href="#" style={linkStyle}>Facebook</a>
             </li>
             <li>
-              <a href="#">Twitter</a>
+              <a href="#" style={linkStyle}>Twitter</a>
             </li>
             <li>
-              <a href="#">YouTube</a>
+              <a href="#" style={linkStyle}>YouTube</a>
             </li>
           </ul>
         </div>
@@ -76,24 +82,26 @@ const Footer = () => {
           padding: "2em",
         }}
       >
+        <div></div>
         <div>
           <p>
             &copy; {new Date().getFullYear()} Nike, Inc. All Rights Reserved.
           </p>
         </div>
         <div>
-          <ul>
+          <ul style={{ listStyleType: "none", }}>
             <li>
-              <a href="#">Privacy Policy</a>
+              <a href="#" style={linkStyle}>Privacy Policy</a>
             </li>
             <li>
-              <a href="#">Terms of Use</a>
+              <a href="#" style={linkStyle}>Terms of Use</a>
             </li>
             <li>
-              <a href="#">Accessibility Statement</a>
+              <a href="#" style={linkStyle}>Accessibility Statement</a>
             </li>
           </ul>
         </div>
+        <div></div>
       </Box>
     </footer>
   );

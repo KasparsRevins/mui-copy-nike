@@ -17,6 +17,7 @@ export default function KeepRunning() {
             textTransform: "uppercase",
             marginTop: "1px",
             fontSize: "72px",
+            textAlign: "center"
           }}
         >
           It's still better outside.

@@ -4,6 +4,7 @@ import NikeNavbar from './Layout/Header/navbar';
 import CarouselAds from './Layout/Header/carousel';
 import Footer from './Layout/Footer/footer';
 import MyCarousel from './Layout/Body/imagecarousel';
+import Explore from './Layout/Body/explore';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <KeepRunning/>
       <BackgroundVideo/>
       <MyCarousel/>
+      <Explore/>
       <Footer/>
     </>
   );

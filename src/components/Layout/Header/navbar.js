@@ -31,31 +31,34 @@ function NikeNavbar() {
             <IconButton>
               <img
                 src="https://upload.wikimedia.org/wikipedia/en/3/37/Jumpman_logo.svg"
-                width={50}
-                height={25}
+                width={48}
+                height={24}
                 alt="jordan"
               />
             </IconButton>
             <IconButton>
               <img
                 src="https://1000logos.net/wp-content/uploads/2021/04/Converse-logo.png"
-                width={50}
-                height={25}
+                width={48}
+                height={24}
                 alt="converse"
               />
             </IconButton>
           </div>
           <div>
-            <IconButton sx={{ fontSize: 12 }}>
+            <IconButton sx={{ fontSize: 12, fontWeight: "bold" }}>
               <p>Find a Store</p>
             </IconButton>
-            <IconButton sx={{ fontSize: 12 }}>
+            <span>|</span>
+            <IconButton sx={{ fontSize: 12, fontWeight: "bold" }}>
               <p>Help</p>
             </IconButton>
-            <IconButton sx={{ fontSize: 12 }}>
+            <span>|</span>
+            <IconButton sx={{ fontSize: 12, fontWeight: "bold" }}>
               <p>Join Us</p>
             </IconButton>
-            <IconButton sx={{ fontSize: 12 }}>
+            <span>|</span>
+            <IconButton sx={{ fontSize: 12, fontWeight: "bold" }}>
               <p>Sign In</p>
             </IconButton>
           </div>

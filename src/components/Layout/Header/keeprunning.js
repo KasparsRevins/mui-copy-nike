@@ -16,8 +16,9 @@ export default function KeepRunning() {
             fontWeight: 500,
             textTransform: "uppercase",
             marginTop: "1px",
-            fontSize: "72px",
-            textAlign: "center"
+            fontSize: "76px",
+            textAlign: "center",
+            fontWeight: 500,
           }}
         >
           It's still better outside.

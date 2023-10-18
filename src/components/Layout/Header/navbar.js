@@ -6,7 +6,8 @@ import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
-import { Box, Button, Hidden } from "@mui/material";
+import { Box, Button, Hidden,TextField } from "@mui/material";
+import { SearchOutlined } from "@mui/icons-material";
 
 function NikeNavbar() {
   const [menuAnchorEl, setMenuAnchorEl] = useState(null);
@@ -78,11 +79,11 @@ function NikeNavbar() {
             </div>
             <div>
               <Hidden smDown>
-                <Button color="inherit">New & Featured</Button>
-                <Button color="inherit">Men</Button>
-                <Button color="inherit">Women</Button>
-                <Button color="inherit">Kids</Button>
-                <Button color="inherit">Sale</Button>
+                <Button color="inherit" sx={{ fontWeight: "bold", textTransform: "capitalize"}}>New & Featured</Button>
+                <Button color="inherit" sx={{ fontWeight: "bold", textTransform: "capitalize" }}>Men</Button>
+                <Button color="inherit" sx={{ fontWeight: "bold", textTransform: "capitalize" }}>Women</Button>
+                <Button color="inherit" sx={{ fontWeight: "bold", textTransform: "capitalize" }}>Kids</Button>
+                <Button color="inherit" sx={{ fontWeight: "bold", textTransform: "capitalize" }}>Sale</Button>
               </Hidden>
             </div>
             <div>

@@ -56,11 +56,15 @@ function NikeNavbar() {
             </IconButton>
             <span>|</span>
             <IconButton sx={{ fontSize: 12, fontWeight: "bold" }}>
+            <Link to="/SignUp" style={{textDecoration: "none", color: "grey"}}>
               <p>Join Us</p>
+            </Link>
             </IconButton>
             <span>|</span>
             <IconButton sx={{ fontSize: 12, fontWeight: "bold" }}>
+            <Link to="/SignIn" style={{textDecoration: "none", color: "grey"}}>
               <p>Sign In</p>
+            </Link>
             </IconButton>
           </div>
         </Box>

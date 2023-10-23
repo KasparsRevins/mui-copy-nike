@@ -6,8 +6,8 @@ import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
-import { Box, Button, Hidden,TextField } from "@mui/material";
-import { SearchOutlined } from "@mui/icons-material";
+import { Box, Button, Hidden } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function NikeNavbar() {
   const [menuAnchorEl, setMenuAnchorEl] = useState(null);
@@ -106,8 +106,8 @@ function NikeNavbar() {
               <MenuItem>Women</MenuItem>
               <MenuItem>Kids</MenuItem>
               <MenuItem>Sale</MenuItem>
-              <MenuItem>Join Us</MenuItem>
-              <MenuItem>Log In</MenuItem>
+              <Link to="/SignUp"><MenuItem>Join Us</MenuItem></Link>
+              <Link to="/SignIn"><MenuItem>Log In</MenuItem></Link>
             </Menu>
           </Hidden>
         </Box>

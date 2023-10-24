@@ -24,7 +24,7 @@ const SportCarousel = () => {
 
   return (
     <>
-    <h3>Shop by Sport</h3>
+    <h3 style={{ marginLeft: "1em", marginRight: "1em" }}>Shop by Sport</h3>
     <Box sx={{ padding: "20px 0 20px 0", cursor: "pointer" }}>
       <Carousel
         additionalTransfrom={0}

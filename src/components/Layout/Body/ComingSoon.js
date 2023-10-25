@@ -4,11 +4,10 @@ function ComingSoon() {
       <h1
         style={{
           fontWeight: 500,
-          textTransform: "uppercase",
-          marginTop: "1px",
-          fontSize: "76px",
+          textTransform: "capitalize",
+          fontSize: "46px",
           textAlign: "center",
-          fontWeight: 500,
+          marginTop: "20%"
         }}
       >
         Sorry! This is still under construction please try again at a later time!

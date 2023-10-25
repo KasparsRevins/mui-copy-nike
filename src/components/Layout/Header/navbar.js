@@ -47,24 +47,34 @@ function NikeNavbar() {
             </IconButton>
           </div>
           <div>
-            <IconButton sx={{ fontSize: 12, fontWeight: "bold" }}>
-              <p>Find a Store</p>
-            </IconButton>
-            <span>|</span>
-            <IconButton sx={{ fontSize: 12, fontWeight: "bold" }}>
-              <p>Help</p>
-            </IconButton>
-            <span>|</span>
-            <IconButton sx={{ fontSize: 12, fontWeight: "bold" }}>
-            <Link to="/SignUp" style={{textDecoration: "none", color: "grey"}}>
-              <p>Join Us</p>
+            <Link to="/ComingSoon" style={{ textDecoration: "none" }}>
+              <IconButton sx={{ fontSize: 12, fontWeight: "bold" }}>
+                <p>Find a Store</p>
+              </IconButton>
             </Link>
+            <span>|</span>
+            <Link to="/ComingSoon" style={{ textDecoration: "none" }}>
+              <IconButton sx={{ fontSize: 12, fontWeight: "bold" }}>
+                <p>Help</p>
+              </IconButton>
+            </Link>
+            <span>|</span>
+            <IconButton sx={{ fontSize: 12, fontWeight: "bold" }}>
+              <Link
+                to="/SignUp"
+                style={{ textDecoration: "none", color: "grey" }}
+              >
+                <p>Join Us</p>
+              </Link>
             </IconButton>
             <span>|</span>
             <IconButton sx={{ fontSize: 12, fontWeight: "bold" }}>
-            <Link to="/SignIn" style={{textDecoration: "none", color: "grey"}}>
-              <p>Sign In</p>
-            </Link>
+              <Link
+                to="/SignIn"
+                style={{ textDecoration: "none", color: "grey" }}
+              >
+                <p>Sign In</p>
+              </Link>
             </IconButton>
           </div>
         </Box>
@@ -83,11 +93,46 @@ function NikeNavbar() {
             </div>
             <div>
               <Hidden smDown>
-                <Button color="inherit" sx={{ fontWeight: "bold", textTransform: "capitalize"}}>New & Featured</Button>
-                <Button color="inherit" sx={{ fontWeight: "bold", textTransform: "capitalize" }}>Men</Button>
-                <Button color="inherit" sx={{ fontWeight: "bold", textTransform: "capitalize" }}>Women</Button>
-                <Button color="inherit" sx={{ fontWeight: "bold", textTransform: "capitalize" }}>Kids</Button>
-                <Button color="inherit" sx={{ fontWeight: "bold", textTransform: "capitalize" }}>Sale</Button>
+                <Link to="/ComingSoon" style={{ textDecoration: "none", color: "black" }}>
+                  <Button
+                    color="inherit"
+                    sx={{ fontWeight: "bold", textTransform: "capitalize" }}
+                  >
+                    New & Featured
+                  </Button>
+                </Link>
+                <Link to="/ComingSoon" style={{ textDecoration: "none", color: "black" }}>
+                  <Button
+                    color="inherit"
+                    sx={{ fontWeight: "bold", textTransform: "capitalize" }}
+                  >
+                    Men
+                  </Button>
+                </Link>
+                <Link to="/ComingSoon" style={{ textDecoration: "none", color: "black" }}>
+                  <Button
+                    color="inherit"
+                    sx={{ fontWeight: "bold", textTransform: "capitalize" }}
+                  >
+                    Women
+                  </Button>
+                </Link>
+                <Link to="/ComingSoon" style={{ textDecoration: "none", color: "black" }}>
+                  <Button
+                    color="inherit"
+                    sx={{ fontWeight: "bold", textTransform: "capitalize" }}
+                  >
+                    Kids
+                  </Button>
+                </Link>
+                <Link to="/ComingSoon" style={{ textDecoration: "none", color: "black" }}>
+                  <Button
+                    color="inherit"
+                    sx={{ fontWeight: "bold", textTransform: "capitalize" }}
+                  >
+                    Sale
+                  </Button>
+                </Link>
               </Hidden>
             </div>
             <div>
@@ -105,13 +150,27 @@ function NikeNavbar() {
               open={Boolean(menuAnchorEl)}
               onClose={handleMenuClose}
             >
-              <MenuItem>New & Featured</MenuItem>
-              <MenuItem>Men</MenuItem>
-              <MenuItem>Women</MenuItem>
-              <MenuItem>Kids</MenuItem>
-              <MenuItem>Sale</MenuItem>
-              <Link to="/SignUp"><MenuItem>Join Us</MenuItem></Link>
-              <Link to="/SignIn"><MenuItem>Log In</MenuItem></Link>
+              <Link to="/ComingSoon" style={{ textDecoration: "none" }}>
+                <MenuItem>New & Featured</MenuItem>
+              </Link>
+              <Link to="/ComingSoon" style={{ textDecoration: "none" }}>
+                <MenuItem>Men</MenuItem>
+              </Link>
+              <Link to="/ComingSoon" style={{ textDecoration: "none" }}>
+                <MenuItem>Women</MenuItem>
+              </Link>
+              <Link to="/ComingSoon" style={{ textDecoration: "none" }}>
+                <MenuItem>Kids</MenuItem>
+              </Link>
+              <Link to="/ComingSoon" style={{ textDecoration: "none" }}>
+                <MenuItem>Sale</MenuItem>
+              </Link>
+              <Link to="/SignUp">
+                <MenuItem>Join Us</MenuItem>
+              </Link>
+              <Link to="/SignIn">
+                <MenuItem>Log In</MenuItem>
+              </Link>
             </Menu>
           </Hidden>
         </Box>

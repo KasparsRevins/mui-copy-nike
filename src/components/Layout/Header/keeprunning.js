@@ -1,5 +1,6 @@
 import React from "react";
 import { Box } from "@mui/material";
+import { Link } from "react-router-dom";
 export default function KeepRunning() {
   return (
     <>
@@ -31,6 +32,7 @@ export default function KeepRunning() {
           alignItems: "center",
         }}
       >
+        <Link to="/ComingSoon" style={{textDecoration: "none", color: "white"}}>
         <button
           style={{
             background: "black",
@@ -43,6 +45,7 @@ export default function KeepRunning() {
         >
           Shop
         </button>
+          </Link>
       </div>
     </>
   );

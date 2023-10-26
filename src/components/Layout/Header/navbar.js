@@ -82,18 +82,23 @@ function NikeNavbar() {
         <Box>
           <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
             <div>
-              <IconButton>
-                <img
-                  src="https://cdn.iconscout.com/icon/free/png-512/free-nike-15-761696.png?f=webp&w=256"
-                  width={50}
-                  height={50}
-                  alt="nike"
-                />
-              </IconButton>
+              <Link to="/">
+                <IconButton>
+                  <img
+                    src="https://cdn.iconscout.com/icon/free/png-512/free-nike-15-761696.png?f=webp&w=256"
+                    width={50}
+                    height={50}
+                    alt="nike"
+                  />
+                </IconButton>
+              </Link>
             </div>
             <div>
               <Hidden smDown>
-                <Link to="/NewFeaturedDetails" style={{ textDecoration: "none", color: "black" }}>
+                <Link
+                  to="/NewFeaturedDetails"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
                   <Button
                     color="inherit"
                     sx={{ fontWeight: "bold", textTransform: "capitalize" }}
@@ -101,7 +106,10 @@ function NikeNavbar() {
                     New & Featured
                   </Button>
                 </Link>
-                <Link to="/ComingSoon" style={{ textDecoration: "none", color: "black" }}>
+                <Link
+                  to="/ComingSoon"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
                   <Button
                     color="inherit"
                     sx={{ fontWeight: "bold", textTransform: "capitalize" }}
@@ -109,7 +117,10 @@ function NikeNavbar() {
                     Men
                   </Button>
                 </Link>
-                <Link to="/ComingSoon" style={{ textDecoration: "none", color: "black" }}>
+                <Link
+                  to="/ComingSoon"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
                   <Button
                     color="inherit"
                     sx={{ fontWeight: "bold", textTransform: "capitalize" }}
@@ -117,7 +128,10 @@ function NikeNavbar() {
                     Women
                   </Button>
                 </Link>
-                <Link to="/ComingSoon" style={{ textDecoration: "none", color: "black" }}>
+                <Link
+                  to="/ComingSoon"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
                   <Button
                     color="inherit"
                     sx={{ fontWeight: "bold", textTransform: "capitalize" }}
@@ -125,7 +139,10 @@ function NikeNavbar() {
                     Kids
                   </Button>
                 </Link>
-                <Link to="/ComingSoon" style={{ textDecoration: "none", color: "black" }}>
+                <Link
+                  to="/ComingSoon"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
                   <Button
                     color="inherit"
                     sx={{ fontWeight: "bold", textTransform: "capitalize" }}

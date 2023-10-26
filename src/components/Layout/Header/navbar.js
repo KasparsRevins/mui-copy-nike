@@ -93,7 +93,7 @@ function NikeNavbar() {
             </div>
             <div>
               <Hidden smDown>
-                <Link to="/ComingSoon" style={{ textDecoration: "none", color: "black" }}>
+                <Link to="/NewFeaturedDetails" style={{ textDecoration: "none", color: "black" }}>
                   <Button
                     color="inherit"
                     sx={{ fontWeight: "bold", textTransform: "capitalize" }}
@@ -150,7 +150,7 @@ function NikeNavbar() {
               open={Boolean(menuAnchorEl)}
               onClose={handleMenuClose}
             >
-              <Link to="/ComingSoon" style={{ textDecoration: "none" }}>
+              <Link to="/NewFeaturedDetails" style={{ textDecoration: "none" }}>
                 <MenuItem>New & Featured</MenuItem>
               </Link>
               <Link to="/ComingSoon" style={{ textDecoration: "none" }}>

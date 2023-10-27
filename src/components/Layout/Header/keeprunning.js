@@ -31,7 +31,7 @@ export default function KeepRunning() {
           alignItems: "center",
         }}
       >
-        <Link to="/ComingSoon" style={{textDecoration: "none", color: "white"}}>
+        <Link to="/NewFeaturedDetails" style={{textDecoration: "none", color: "white"}}>
         <button
           style={{
             background: "black",

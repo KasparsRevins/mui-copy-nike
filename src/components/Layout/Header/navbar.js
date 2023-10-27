@@ -30,20 +30,24 @@ function NikeNavbar() {
         >
           <div>
             <IconButton>
-              <img
-                src="https://upload.wikimedia.org/wikipedia/en/3/37/Jumpman_logo.svg"
-                width={48}
-                height={24}
-                alt="jordan"
-              />
+              <Link to="/ComingSoon" style={{ textDecoration: "none" }}>
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/en/3/37/Jumpman_logo.svg"
+                  width={48}
+                  height={24}
+                  alt="jordan"
+                />
+              </Link>
             </IconButton>
             <IconButton>
-              <img
-                src="https://1000logos.net/wp-content/uploads/2021/04/Converse-logo.png"
-                width={48}
-                height={24}
-                alt="converse"
-              />
+              <Link to="/ComingSoon" style={{ textDecoration: "none" }}>
+                <img
+                  src="https://1000logos.net/wp-content/uploads/2021/04/Converse-logo.png"
+                  width={48}
+                  height={24}
+                  alt="converse"
+                />
+              </Link>
             </IconButton>
           </div>
           <div>
@@ -154,10 +158,20 @@ function NikeNavbar() {
             </div>
             <div>
               <IconButton>
-                <FavoriteBorderIcon></FavoriteBorderIcon>
+                <Link
+                  to="/ComingSoon"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  <FavoriteBorderIcon></FavoriteBorderIcon>
+                </Link>
               </IconButton>
               <IconButton>
-                <WorkOutlineIcon></WorkOutlineIcon>
+                <Link
+                  to="/ComingSoon"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  <WorkOutlineIcon></WorkOutlineIcon>
+                </Link>
               </IconButton>
             </div>
           </Toolbar>

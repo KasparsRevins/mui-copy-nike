@@ -2,6 +2,7 @@ import React from "react";
 import { Grid, Typography, Paper } from "@mui/material";
 import NikeNavbar from "../../Header/navbar";
 import CarouselAds from "../../Header/carousel";
+import { Link } from "react-router-dom";
 
 function NewFeaturedDetails() {
   const products = [
@@ -45,6 +46,7 @@ function NewFeaturedDetails() {
           </Typography>
         </Grid>
         <Grid item xs={12} sm={6} md={4} lg={3}>
+          <Link to="/Showcase" style={{ textDecoration: 'none' }}>
           <Paper
             style={{
               display: "flex",
@@ -52,17 +54,18 @@ function NewFeaturedDetails() {
               alignItems: "left",
               boxShadow: "none",
             }}
-          >
+            >
             <img
               src={products[0].imageSrc}
               alt={products[0].name}
               style={{ width: "100%", height: "auto" }}
-            />
-            <Typography variant="h6">{products[0].name}</Typography>
+              />
+            <Typography variant="h6" sx={{textDecoration: "none"}}>{products[0].name}</Typography>
             <Typography variant="subtitle1">
               ${products[0].price.toFixed(2)}
             </Typography>
           </Paper>
+          </Link>
         </Grid>
         <Grid item xs={12} sm={6} md={4} lg={3}>
           <Paper

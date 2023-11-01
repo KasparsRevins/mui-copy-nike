@@ -5,6 +5,7 @@ import SignUp from "../Pages/SignUp/SignUp";
 import ComingSoon from "./Body/ComingSoon";
 import NewFeaturedDetails from "./Body/New & Featured/NewFeaturedDetails";
 import Showcase from "./Body/Product Showcase/Showcase";
+import MensDetails from "./Body/Men/MensDetails";
 
 export const router = createBrowserRouter([
     {
@@ -30,5 +31,9 @@ export const router = createBrowserRouter([
     {
         path: "/Showcase",
         element: <Showcase/>
+    },
+    {
+        path: "/MensDetails",
+        element: <MensDetails/>
     },
 ])

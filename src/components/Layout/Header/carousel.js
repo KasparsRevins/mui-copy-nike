@@ -45,7 +45,7 @@ function Item(props) {
         boxShadow: 0,
         padding: "1px",
         position: "relative",
-        textAlign: "center"
+        textAlign: "center",
       }}
     >
       <p>{props.item.name}</p>

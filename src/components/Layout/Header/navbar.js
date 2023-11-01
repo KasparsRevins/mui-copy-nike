@@ -8,6 +8,9 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 import { Box, Button, Hidden } from "@mui/material";
 import { Link } from "react-router-dom";
+import SearchBar from "./searchbar";
+import { createTheme } from "@material-ui/core";
+import { ThemeProvider } from "@emotion/react";
 
 function NikeNavbar() {
   const [menuAnchorEl, setMenuAnchorEl] = useState(null);
@@ -16,8 +19,21 @@ function NikeNavbar() {
     setMenuAnchorEl(null);
   };
 
+  const theme = createTheme({
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 600,
+        md: 921,
+        lg: 1200,
+        xl: 1536,
+      },
+    },
+  });
+
   return (
     <>
+        <ThemeProvider theme={theme}>
       <AppBar
         sx={{ backgroundColor: "white", color: "black", boxShadow: "none" }}
       >
@@ -97,8 +113,8 @@ function NikeNavbar() {
                 </IconButton>
               </Link>
             </div>
-            <div>
-              <Hidden smDown>
+            <div style={{paddingLeft:"140px"}}>
+              <Hidden mdDown>
                 <Link
                   to="/NewFeaturedDetails"
                   style={{ textDecoration: "none", color: "black" }}
@@ -111,7 +127,7 @@ function NikeNavbar() {
                   </Button>
                 </Link>
                 <Link
-                  to="/ComingSoon"
+                  to="/MensDetails"
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   <Button
@@ -156,7 +172,13 @@ function NikeNavbar() {
                 </Link>
               </Hidden>
             </div>
-            <div>
+            <div style={{ display: "flex", flexDirection: "row" }}>
+              <Hidden mdDown>
+                <SearchBar />
+              </Hidden>
+              <Hidden mdUp>
+                <IconButton style={{ color: "black" }} />
+              </Hidden>
               <IconButton>
                 <Link
                   to="/ComingSoon"
@@ -206,6 +228,7 @@ function NikeNavbar() {
           </Hidden>
         </Box>
       </AppBar>
+      </ThemeProvider>
     </>
   );
 }

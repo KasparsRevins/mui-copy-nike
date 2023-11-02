@@ -67,7 +67,7 @@ function NikeNavbar() {
             </IconButton>
           </div>
           <div>
-            <Link to="/ComingSoon" style={{ textDecoration: "none" }}>
+            <Link to="/StoreMap" style={{ textDecoration: "none" }}>
               <IconButton sx={{ fontSize: 12, fontWeight: "bold" }}>
                 <p>Find a Store</p>
               </IconButton>

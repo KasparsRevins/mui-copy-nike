@@ -1,13 +1,14 @@
 import React from "react";
 import { Paper, Typography, Box } from "@mui/material";
-import NikeNavbar from "../../Header/navbar";
-import CarouselAds from "../../Header/carousel";
+import Navbar from "../../Header/NavBar/Navbar";
+import AdCarousel from "../../Header/Ad Carousel/AdCarousel";
+
 
 const StoreMap = () => {
   return (
     <>
-    <NikeNavbar />
-    <CarouselAds />
+    <Navbar />
+    <AdCarousel />
     <Paper
       elevation={3}
       style={{ padding: "20px", maxWidth: "600px", margin: "0 auto" }}

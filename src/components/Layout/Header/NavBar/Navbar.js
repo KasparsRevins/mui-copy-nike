@@ -8,11 +8,11 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 import { Box, Button, Hidden } from "@mui/material";
 import { Link } from "react-router-dom";
-import SearchBar from "./searchbar";
+import SearchBar from "../SearchBar/SearchBar";
 import { createTheme } from "@material-ui/core";
 import { ThemeProvider } from "@emotion/react";
 
-function NikeNavbar() {
+function Navbar() {
   const [menuAnchorEl, setMenuAnchorEl] = useState(null);
 
   const handleMenuClose = () => {
@@ -233,4 +233,4 @@ function NikeNavbar() {
   );
 }
 
-export default NikeNavbar;
+export default Navbar;

@@ -1,20 +1,21 @@
-import BackgroundVideo from './Layout/Body/Video/backgroundvideo';
-import KeepRunning from './Layout/Header/keeprunning';
-import NikeNavbar from './Layout/Header/navbar';
-import CarouselAds from './Layout/Header/carousel';
-import Footer from './Layout/Footer/footer';
-import MyCarousel from './Layout/Body/imagecarousel';
-import Explore from './Layout/Body/explore';
-import SportCarousel from './Layout/Body/sportcarousel';
+import Explore from "./Layout/Body/Explore/Explore";
+import SportCarousel from "./Layout/Body/Sport Carousel/SportCarousel";
+import BackgroundVideo from "./Layout/Body/Video/BackgroundVideo";
+import WeatherClothingCarousel from "./Layout/Body/Weather Clothing Carousel/WeatherClothingCarousel";
+import Footer from "./Layout/Footer/Footer";
+import AdCarousel from "./Layout/Header/Ad Carousel/AdCarousel";
+import KeepRunning from "./Layout/Header/Keep Running/KeepRunning";
+import Navbar from "./Layout/Header/NavBar/Navbar";
+
 
 function App() {
   return (
     <>
-      <NikeNavbar/>
-      <CarouselAds/>
+      <Navbar/>
+      <AdCarousel/>
       <KeepRunning/>
       <BackgroundVideo/>
-      <MyCarousel/>
+      <WeatherClothingCarousel/>
       <Explore/>
       <SportCarousel/>
       <Footer/>

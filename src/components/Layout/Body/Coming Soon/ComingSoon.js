@@ -1,11 +1,12 @@
-import CarouselAds from "../Header/carousel";
-import NikeNavbar from "../Header/navbar";
+import AdCarousel from "../../Header/Ad Carousel/AdCarousel";
+import Navbar from "../../Header/NavBar/Navbar";
+
 
 function ComingSoon() {
   return (
     <div>
-      <NikeNavbar/>
-      <CarouselAds/>
+      <Navbar/>
+      <AdCarousel/>
       <h1
         style={{
           fontWeight: 500,

@@ -7,6 +7,7 @@ import NewFeaturedDetails from "./Body/New & Featured/NewFeaturedDetails";
 import Showcase from "./Body/Product Showcase/Showcase";
 import MensDetails from "./Body/Men/MensDetails";
 import StoreMap from "./Body/Find a Store/StoreMap";
+import WomensDetails from "./Body/Women/Women";
 
 
 export const router = createBrowserRouter([
@@ -41,5 +42,9 @@ export const router = createBrowserRouter([
     {
         path: "/StoreMap",
         element: <StoreMap/>
+    },
+    {
+        path: "/WomensDetails",
+        element: <WomensDetails/>
     },
 ])

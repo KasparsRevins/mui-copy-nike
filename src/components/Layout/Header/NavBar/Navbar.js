@@ -138,7 +138,7 @@ function Navbar() {
                   </Button>
                 </Link>
                 <Link
-                  to="/ComingSoon"
+                  to="/WomensDetails"
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   <Button

@@ -13,6 +13,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CloseIcon from "@mui/icons-material/Close";
+import axios from 'axios';
 
 function Copyright(props) {
   return (
@@ -32,19 +33,36 @@ function Copyright(props) {
   );
 }
 
-// TODO remove, this demo shouldn't need to reset the theme.
-
 const defaultTheme = createTheme();
 
 export default function SignUp() {
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+  
+    try {
+      const response = await axios.post('http://localhost:5000/signup', {
+        username: event.currentTarget.username.value,
+        surname: event.currentTarget.surname.value,
+        email: event.currentTarget.email.value,
+        password: event.currentTarget.password.value,
+      });
+  
+      console.log(response.data); // Handle the response as needed
+    } catch (error) {
+      if (error.response) {
+        // The request was made and the server responded with a status code
+        // that falls out of the range of 2xx
+        console.error('Server responded with an error:', error.response.data);
+      } else if (error.request) {
+        // The request was made but no response was received
+        console.error('No response received from the server');
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        console.error('Error setting up the request:', error.message);
+      }
+    }
   };
+  
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -74,10 +92,10 @@ export default function SignUp() {
               <Grid item xs={12} sm={6}>
                 <TextField
                   autoComplete="given-name"
+                  fullWidth
+                  id="username"
                   name="firstName"
                   required
-                  fullWidth
-                  id="firstName"
                   label="First Name"
                   autoFocus
                 />
@@ -86,7 +104,7 @@ export default function SignUp() {
                 <TextField
                   required
                   fullWidth
-                  id="lastName"
+                  id="surname"
                   label="Last Name"
                   name="lastName"
                   autoComplete="family-name"
@@ -106,10 +124,10 @@ export default function SignUp() {
                 <TextField
                   required
                   fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
                   id="password"
+                  type="password"
+                  label="Password"
+                  name="password"
                   autoComplete="new-password"
                 />
               </Grid>

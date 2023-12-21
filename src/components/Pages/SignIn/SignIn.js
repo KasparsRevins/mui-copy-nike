@@ -1,25 +1,40 @@
-import * as React from "react";
+// Import necessary dependencies
+import React from "react";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Link } from "react-router-dom";
+import CloseIcon from "@mui/icons-material/Close";
 
+// Create a default theme
 const defaultTheme = createTheme();
 
-export default function SignIn() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
-  };
+// Define the SignIn component
+const SignIn = () => {
+  // Use Formik for form management
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    // Validation schema using Yup
+    validationSchema: Yup.object({
+      email: Yup.string().email("Invalid email address").required("Required"),
+      password: Yup.string().required("Required"),
+    }),
+    // Handle form submission
+    onSubmit: (values) => {
+      console.log(values); // Placeholder for handling form submission
+    },
+  });
 
+  // Render the component
   return (
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
@@ -32,47 +47,43 @@ export default function SignIn() {
             alignItems: "center",
           }}
         >
-          <div>
-            <img
-              src="https://upload.wikimedia.org/wikipedia/en/3/37/Jumpman_logo.svg"
-              width={48}
-              height={24}
-              alt="jordan"
-            />
-            <img
-              src="https://1000logos.net/wp-content/uploads/2021/04/Converse-logo.png"
-              width={48}
-              height={24}
-              alt="converse"
-            />
-          </div>
           <Typography component="h1" variant="h5">
-            Enter your email to join us or sign in.
+            Enter your credentials to sign in.
+            <Link to="/" variant="body2" style={{ color: "black" }}>
+              <CloseIcon />
+            </Link>
           </Typography>
           <Box
             component="form"
-            onSubmit={handleSubmit}
+            onSubmit={formik.handleSubmit}
             noValidate
             sx={{ mt: 1 }}
           >
             <TextField
               margin="normal"
-              required
               fullWidth
               id="email"
               label="Email"
               name="email"
               autoComplete="email"
               autoFocus
+              {...formik.getFieldProps("email")}
+              error={formik.touched.email && Boolean(formik.errors.email)}
+              helperText={formik.touched.email && formik.errors.email}
             />
-            <Grid container>
-              <Grid item xs>
-                <p>
-                  By continuing, you agree to Nike’s Terms of Use and you
-                  confirm you have read Nike’s Privacy Policy.
-                </p>
-              </Grid>
-            </Grid>
+            <TextField
+              type="password"
+              margin="normal"
+              fullWidth
+              id="password"
+              label="Password"
+              name="password"
+              autoComplete="password"
+              autoFocus
+              {...formik.getFieldProps("password")}
+              error={formik.touched.password && Boolean(formik.errors.password)}
+              helperText={formik.touched.password && formik.errors.password}
+            />
             <div style={{ display: "flex", flexDirection: "row-reverse" }}>
               <Button
                 type="submit"
@@ -92,4 +103,6 @@ export default function SignIn() {
       </Container>
     </ThemeProvider>
   );
-}
+};
+
+export default SignIn;

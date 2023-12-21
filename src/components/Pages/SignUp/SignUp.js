@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -13,56 +13,43 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CloseIcon from "@mui/icons-material/Close";
-import axios from 'axios';
-
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+import axios from "axios";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 const defaultTheme = createTheme();
 
-export default function SignUp() {
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-  
-    try {
-      const response = await axios.post('http://localhost:5000/signup', {
-        username: event.currentTarget.username.value,
-        surname: event.currentTarget.surname.value,
-        email: event.currentTarget.email.value,
-        password: event.currentTarget.password.value,
-      });
-  
-      console.log(response.data); // Handle the response as needed
-    } catch (error) {
-      if (error.response) {
-        // The request was made and the server responded with a status code
-        // that falls out of the range of 2xx
-        console.error('Server responded with an error:', error.response.data);
-      } else if (error.request) {
-        // The request was made but no response was received
-        console.error('No response received from the server');
-      } else {
-        // Something happened in setting up the request that triggered an Error
-        console.error('Error setting up the request:', error.message);
+const SignUp = () => {
+  const formik = useFormik({
+    initialValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+      allowExtraEmails: false,
+    },
+    validationSchema: Yup.object({
+      firstName: Yup.string().required("Required"),
+      lastName: Yup.string().required("Required"),
+      email: Yup.string().email("Invalid email address").required("Required"),
+      password: Yup.string().required("Required"),
+    }),
+    onSubmit: async (values) => {
+      try {
+        const response = await axios.post("http://localhost:5000/signup", {
+          username: values.firstName,
+          surname: values.lastName,
+          email: values.email,
+          password: values.password,
+        });
+
+        console.log(response.data); // Handle the response as needed
+      } catch (error) {
+        // Handle errors
+        console.error("Error:", error.message);
       }
-    }
-  };
-  
+    },
+  });
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -82,12 +69,7 @@ export default function SignUp() {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <Box
-            component="form"
-            noValidate
-            onSubmit={handleSubmit}
-            sx={{ mt: 3 }}
-          >
+          <Box component="form" noValidate onSubmit={formik.handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
@@ -98,6 +80,9 @@ export default function SignUp() {
                   required
                   label="First Name"
                   autoFocus
+                  {...formik.getFieldProps("firstName")}
+                  error={formik.touched.firstName && Boolean(formik.errors.firstName)}
+                  helperText={formik.touched.firstName && formik.errors.firstName}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -108,6 +93,9 @@ export default function SignUp() {
                   label="Last Name"
                   name="lastName"
                   autoComplete="family-name"
+                  {...formik.getFieldProps("lastName")}
+                  error={formik.touched.lastName && Boolean(formik.errors.lastName)}
+                  helperText={formik.touched.lastName && formik.errors.lastName}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -118,6 +106,9 @@ export default function SignUp() {
                   label="Email Address"
                   name="email"
                   autoComplete="email"
+                  {...formik.getFieldProps("email")}
+                  error={formik.touched.email && Boolean(formik.errors.email)}
+                  helperText={formik.touched.email && formik.errors.email}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -129,23 +120,24 @@ export default function SignUp() {
                   label="Password"
                   name="password"
                   autoComplete="new-password"
+                  {...formik.getFieldProps("password")}
+                  error={formik.touched.password && Boolean(formik.errors.password)}
+                  helperText={formik.touched.password && formik.errors.password}
                 />
               </Grid>
               <Grid item xs={12}>
                 <FormControlLabel
                   control={
-                    <Checkbox value="allowExtraEmails" color="primary" />
+                    <Checkbox
+                      {...formik.getFieldProps("allowExtraEmails")}
+                      value={formik.values.allowExtraEmails}
+                    />
                   }
                   label="I want to receive inspiration, marketing promotions and updates via email."
                 />
               </Grid>
             </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
+            <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
               Sign Up
             </Button>
             <Grid container justifyContent="flex-end">
@@ -162,8 +154,9 @@ export default function SignUp() {
             <CloseIcon />
           </Link>
         </Grid>
-        <Copyright sx={{ mt: 5 }} />
       </Container>
     </ThemeProvider>
   );
-}
+};
+
+export default SignUp;
